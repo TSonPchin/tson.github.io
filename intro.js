@@ -56,8 +56,8 @@ class TextScramble {
   }
   
   const phrases = [
-    'WEBSITE DEVELOPED BY Tson',
-    'Hey, i wanna tell you that....',
+    'Dev by Tson',
+    'Hey.....',
     'i <3 u',
     '',
   ];
