@@ -1,0 +1,380 @@
+body {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+/* phần chọn món*/
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    font-size: 24px;
+    color: #333; /* Màu sắc cho tiêu đề */
+}
+/* Căn giữa các nút danh mục */
+#category-buttons {
+    display: flex;
+    justify-content: center; /* Căn giữa các nút theo chiều ngang */
+    gap: 20px; /* Khoảng cách giữa các nút */
+    margin-bottom: 20px;
+}
+
+/* Hiệu ứng cho các nút khi di chuột */
+#category-buttons button {
+    font-family: 'Raleway';
+    padding: 10px 20px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi di chuột vào nút */
+#category-buttons button:hover {
+    background: #0056b3;
+    transform: scale(1.1); /* Tăng kích thước nút khi di chuột qua */
+}
+
+/* Hiệu ứng khi nhấn nút */
+#category-buttons button:active {
+    transform: scale(0.95); /* Giảm kích thước khi nhấn */
+}
+
+/* Cập nhật màu sắc tiêu đề */
+body.dark-mode h1 {
+    color: #f9f9f9; /* Màu chữ sáng cho tiêu đề */
+}
+
+/* Cập nhật màu nền và màu chữ cho các nút */
+body.dark-mode #category-buttons button {
+    background-color: #444; /* Màu nền tối cho nút */
+    color: #f9f9f9; /* Màu chữ sáng cho nút */
+    border: 1px solid #666; /* Viền nút tối */
+}
+
+/* Hiệu ứng khi di chuột vào nút trong chế độ tối */
+body.dark-mode #category-buttons button:hover {
+    background-color: #555; /* Màu nền thay đổi khi hover */
+}
+
+/* Hiệu ứng khi nhấn nút trong chế độ tối */
+body.dark-mode #category-buttons button:active {
+    background-color: #666; /* Màu nền thay đổi khi nhấn */
+    transform: scale(0.95); /* Giảm kích thước khi nhấn */
+}
+
+/* Cập nhật màu nền của thanh header */
+body.dark-mode .header-container {
+    background-color: #242424; /* Màu nền tối hơn cho header */
+}
+
+
+
+
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Hiệu ứng cho các món ăn */
+.product {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 0.5s ease; /* Hiệu ứng mờ dần và thu nhỏ */
+}
+
+/* Khi món ăn đang bị xóa (mờ dần và thu nhỏ) */
+.product.removing {
+    opacity: 0; /* Món ăn sẽ mờ dần */
+    transform: scale(0.95); /* Thu nhỏ món ăn khi bị xóa */
+    pointer-events: none; /* Ngừng tương tác với món ăn bị ẩn */
+    transition: opacity 1s ease, transform 0.5s ease; /* Thời gian cho hiệu ứng mờ dần và thu nhỏ */
+}
+
+
+
+
+
+body.dark-mode {
+    background-color: #202225; /* Dark background */
+    color: #f9f9f9; /* Light text color */
+}
+
+/* Modify specific elements for dark mode */
+body.dark-mode .header-container {
+    background-color: #242424; /* Darker header background */
+}
+body.dark-mode .product p {
+    color: #cdcdcd;
+    margin-bottom: 15px;
+}
+
+body.dark-mode .login-button {
+    background: linear-gradient(135deg, #007AFF, #4A90E2); /* Light background for buttons in dark mode */
+    color: white;
+}
+
+body.dark-mode .product {
+    background-color: #444; /* Dark background for product cards */
+    color: #f9f9f9; /* Light text for product cards */
+}
+
+body.dark-mode footer {
+    background-color: #333; /* Darker footer background */
+    color: #f9f9f9; /* Light footer text */
+}
+
+/* Add more specific dark mode styles as needed */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-height: 70px; /* Adjust this value if needed */
+    width: auto; /* Ensure the width scales proportionally */
+}
+
+.promo-bar {
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0; /* Ensure there is space between elements */
+    font-weight: bold;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.darkmode-toggle {
+    position: relative;
+    margin-right: 10px; /* Space between toggle and login button */
+    display: flex;
+    align-items: center;
+}
+
+#dark-mode-checkbox {
+    display: none;
+}
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #404040;
+    border-radius: 34px;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    transition: .4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 16px; /* Adjusted font-size to fit inside the slider */
+    color: white;
+}
+
+.sun-icon, .moon-icon {
+    width: 50%; /* Ensure icons take up half the space each */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.sun-icon {
+    color: #ffe865;
+}
+
+.moon-icon {
+    color: #fff;
+    opacity: 0;
+}
+
+#dark-mode-checkbox:checked + .toggle-label .slider {
+    background-color: #4A90E2;
+}
+
+#dark-mode-checkbox:checked + .toggle-label .slider .sun-icon {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+#dark-mode-checkbox:checked + .toggle-label .slider .moon-icon {
+    opacity: 1;
+    transform: translateX(-20px);
+}
+.login-button {
+    background: linear-gradient(135deg, #4A90E2, #007AFF);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none; /* Ensure it doesn't look like a link */
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #007AFF, #4A90E2);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows the items to wrap onto new lines if there are too many to fit on one line */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px; /* Adjust the width of the product card */
+    margin: 10px; /* Adds space between the product cards */
+    transition: transform 0.3s ease;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+}
+
+.product p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.menu-icon-container {
+    display: inline-block;
+    margin-right: 20px; /* Khoảng cách giữa icon và logo */
+    font-size: 24px; /* Kích thước icon */
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    transform: translateY(-50%);
+    z-index: 1100;
+}
+/* CSS cho thanh tab trượt */
+.slide-out-menu {
+    position: fixed;
+    left: -250px; /* Ẩn thanh menu */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #717171;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.slide-out-menu ul {
+    list-style-type: none;
+    padding-top: 60px; /* Đẩy các mục xuống để tránh chồng lên icon */
+    padding-left: 20px;
+}
+
+.slide-out-menu ul li {
+    margin-bottom: 20px;
+}
+
+.slide-out-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Khi mở thanh menu */
+.menu-open .slide-out-menu {
+    left: 0;
+}
+
+.menu-icon-container {
+    display: inline-block;
+    margin-right: 20px; /* Khoảng cách giữa icon và logo */
+    font-size: 24px; /* Kích thước icon */
+    cursor: pointer;
+}
+.slide-out-menu ul li {
+    margin-bottom: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.slide-out-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột qua mục menu */
+.slide-out-menu ul li:hover {
+    transform: translateX(10px); /* Dịch sang phải 10px */
+    background-color: #444; /* Thay đổi màu nền */
+}
+
+/* Thay đổi màu chữ khi di chuột qua */
+.slide-out-menu ul li:hover a {
+    color: #ffcc00; /* Thay đổi màu chữ */
+}

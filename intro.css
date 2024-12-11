@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,400i,600,700,900);
+
+.text {
+    font-size: 2em; 
+    line-height: 1.2; 
+  }
+
+body {
+  background-color: black;
+  letter-spacing: 1em;
+  text-align: justify;
+  line-height: 2em;
+  font-family: 'source code pro';
+  font-weight: 700;
+  word-break: break-all;
+  text-transform: uppercase;
+}
+
+.perspective {
+  perspective: 100px;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; 
+  -webkit-transform: translateZ(0px);
+  -webkit-transform: translate3d(0,0,0);
+  height: 100vh;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+article .background,
+article .foreground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.background {
+  transform: translateZ(-50px) /* scale(1.5) */ ;
+  color: #222;
+    
+}
+
+.middleground {
+  transform: translateZ(0px) /* scale(1) */ ;
+  color: #444;
+}
+
+.foreground {
+  transform: translateZ(50px) /* scale(0.5) */ ;
+  color: #fff;
+}
+
+p {
+backface-visibility: hidden; 
+transform: translateZ(0); 
+-webkit-font-smoothing: subpixel-antialiased; 
+-webkit-filter: blur(0); 
+}
+
+.dud {
+  opacity: 0.2;
+}
